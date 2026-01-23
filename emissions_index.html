@@ -2059,8 +2059,8 @@
           // bindEvents logic below replaces the node to clear listeners.
           // So we just find the current one.
           canvas.innerHTML = "";
-          const activeCharIdx = game.battle.currentEntity?.isPlayer
-            ? game.battle.currentEntity.position
+          const activeCharIdx = game.battleSystem.currentEntity?.isPlayer
+            ? game.battleSystem.currentEntity.position
             : -1;
           for (let y = 0; y < this.height; y++) {
             for (let x = 0; x < this.width; x++) {
@@ -2124,7 +2124,7 @@
             SoundManager.init();
             const el = e.target.closest(".tile");
             if (!el) return;
-            const activeEntity = game.battle.currentEntity;
+            const activeEntity = game.battleSystem.currentEntity;
             if (!activeEntity || !activeEntity.isPlayer) return;
             const x = parseInt(el.dataset.x);
             const y = parseInt(el.dataset.y);
@@ -2185,8 +2185,8 @@
           this.grid[pos2.y][pos2.x] = t1;
           this.render();
           const allMatches = this.findMatches();
-          const activeCharIdx = game.battle.currentEntity
-            ? game.battle.currentEntity.position
+          const activeCharIdx = game.battleSystem.currentEntity
+            ? game.battleSystem.currentEntity.position
             : -1;
           const validActiveMatches = allMatches.filter((c) => {
             const tile = this.grid[c.y][c.x];
@@ -2272,9 +2272,9 @@
           });
           this.fillBoard();
           this.render();
-          if (game.battle.currentEntity)
-            game.battle.executePlayerSkill(
-              game.battle.currentEntity,
+          if (game.battleSystem.currentEntity)
+            game.battleSystem.executePlayerSkill(
+              game.battleSystem.currentEntity,
               actionType,
               coords.length,
               isMatch3
@@ -2621,14 +2621,14 @@
             LangManager.toggle();
           };
           surrenderBtn.onclick = () => {
-            game.battle.surrender();
+            game.battleSystem.surrender();
           };
           LangManager.apply();
         }
         static toggle(show) {
           const modal = document.getElementById("settings-modal");
           const battleControls = document.getElementById("battle-controls");
-          const isBattle = game.battle.isBattleActive;
+          const isBattle = game.battleSystem.isBattleActive;
           if (show) {
             modal.classList.add("active");
             if (isBattle) {
@@ -2843,10 +2843,10 @@
       }
 
       const game = {
-        battle: new BattleSystem(),
+        battleSystem: new BattleSystem(),
         startBattle: (config) => {
           const levelId = document.getElementById("level-select").value;
-          game.battle.init(config, levelId);
+          game.battleSystem.init(config, levelId);
         },
       };
 
