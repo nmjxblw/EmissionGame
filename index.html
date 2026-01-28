@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
@@ -309,11 +309,8 @@
         flex: 0 0 40%;
         position: relative;
         background-color: #110d14;
-        background-image: radial-gradient(
-            circle at 50% 10%,
-            #2a2030 0%,
-            transparent 70%
-          ),
+        background-image:
+          radial-gradient(circle at 50% 10%, #2a2030 0%, transparent 70%),
           repeating-linear-gradient(
             45deg,
             #15101a 0,
@@ -473,7 +470,9 @@
       .hp-bar-fill {
         height: 100%;
         width: 100%;
-        transition: width 0.3s, background-color 0.3s;
+        transition:
+          width 0.3s,
+          background-color 0.3s;
       }
 
       .shield-bar-overlay {
@@ -495,7 +494,9 @@
         font-size: 8px;
         font-weight: bold;
         color: #222;
-        text-shadow: 0 0 2px #fff, 0 0 1px #fff;
+        text-shadow:
+          0 0 2px #fff,
+          0 0 1px #fff;
         white-space: nowrap;
         z-index: 5;
         line-height: 10px;
@@ -868,7 +869,9 @@
         height: 100%;
         position: relative;
         cursor: pointer;
-        transition: transform 0.2s, opacity 0.2s;
+        transition:
+          transform 0.2s,
+          opacity 0.2s;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1431,7 +1434,7 @@
           gain.gain.setValueAtTime(this.volume * volMod, this.ctx.currentTime);
           gain.gain.exponentialRampToValueAtTime(
             0.01,
-            this.ctx.currentTime + duration
+            this.ctx.currentTime + duration,
           );
           osc.connect(gain);
           gain.connect(this.ctx.destination);
@@ -1444,7 +1447,7 @@
           const buffer = this.ctx.createBuffer(
             1,
             bufferSize,
-            this.ctx.sampleRate
+            this.ctx.sampleRate,
           );
           const data = buffer.getChannelData(0);
           for (let i = 0; i < bufferSize; i++) data[i] = Math.random() * 2 - 1;
@@ -1454,7 +1457,7 @@
           gain.gain.setValueAtTime(this.volume * volMod, this.ctx.currentTime);
           gain.gain.exponentialRampToValueAtTime(
             0.01,
-            this.ctx.currentTime + duration
+            this.ctx.currentTime + duration,
           );
           noise.connect(gain);
           gain.connect(this.ctx.destination);
@@ -1555,7 +1558,7 @@
             default:
               shape = `<rect x="20" y="20" width="60" height="60" fill="${color}" stroke="${strokeColor}" stroke-width="${strokeWidth}" rx="10" ry="10"/>`;
           }
-          const roman = ["I", "II", "III", "IV"][type - 1] || "?";
+          const roman = [1, 2, 3, 4][type - 1] || "?";
           return `<svg viewBox="0 0 100 100" width="100%" height="100%" style="opacity:${opacity}; filter: ${glowFilter}; overflow: visible;">${shape}<text x="50" y="60" font-size="30" fill="white" text-anchor="middle" font-weight="bold" stroke="none" style="text-shadow: 0 0 3px #000;">${roman}</text></svg>`;
         }
         static calcDamage(
@@ -1564,7 +1567,7 @@
           skillPower,
           skillType,
           isTrueDmg,
-          isShieldDmg
+          isShieldDmg,
         ) {
           if (!attacker || !target) return 0;
           let atk = attacker.temp.atk,
@@ -1611,7 +1614,7 @@
             this.baseDef = data.def;
             this.baseSpd = Math.max(
               CONFIG.MIN_SPEED,
-              Math.min(CONFIG.MAX_SPEED, data.spd)
+              Math.min(CONFIG.MAX_SPEED, data.spd),
             );
             this.element = data.element;
             this.breaks = JSON.parse(JSON.stringify(data.breaks || {}));
@@ -1659,7 +1662,7 @@
             this.position,
             this.isPlayer,
             `+${amount}`,
-            "#4f4"
+            "#4f4",
           );
           UIManager.updateEntityStatus(this);
         }
@@ -1670,7 +1673,7 @@
             this.position,
             this.isPlayer,
             `Shield +${amount}`,
-            "#4af"
+            "#4af",
           );
           UIManager.updateEntityStatus(this);
         }
@@ -1691,7 +1694,7 @@
               this.position,
               this.isPlayer,
               `${Utils.getText("revive")} ${this.faintCounter}/5`,
-              "#fff"
+              "#fff",
             );
             if (this.faintCounter >= 5) {
               this.isFainted = false;
@@ -1720,7 +1723,7 @@
           playerConfig.roster.forEach((charId, idx) => {
             if (charId && CHAR_DATABASE[charId])
               this.playerTeam.push(
-                new BattleEntity(`p_${idx}`, charId, true, idx)
+                new BattleEntity(`p_${idx}`, charId, true, idx),
               );
           });
           this.actionDeck = playerConfig.deck;
@@ -1777,7 +1780,7 @@
           while (queue.length < count && loopLimit < 5000) {
             loopLimit++;
             let ready = simEntities.filter(
-              (e) => e.simAp >= CONFIG.BASE_AP_GOAL
+              (e) => e.simAp >= CONFIG.BASE_AP_GOAL,
             );
             if (ready.length > 0) {
               ready.sort((a, b) => b.simAp - a.simAp);
@@ -1871,7 +1874,7 @@
                 charEntity.temp.atk * dmgMult,
                 skillData.type,
                 descStr.includes("True") || descStr.includes("真实"),
-                false
+                false,
               );
               target.takeDamage(dmgInfo.hpDmg, dmgInfo.shieldDmg);
               this.triggerBreak(target, skillData.type);
@@ -1901,7 +1904,7 @@
               enemy.temp.atk,
               enemy.element,
               false,
-              false
+              false,
             );
             UIManager.playAttackAnim(enemy);
             SoundManager.playAttack();
@@ -1913,7 +1916,7 @@
                   0,
                   false,
                   Utils.getText("attack"),
-                  "#f0f"
+                  "#f0f",
                 );
               }
             }, 300);
@@ -1926,7 +1929,7 @@
             target.position,
             target.isPlayer,
             `Break -1 (${elementType})`,
-            "#ffa"
+            "#ffa",
           );
           if (target.breaks[elementType].count <= 0) {
             let breakDmg = target.breaks[elementType].dmg;
@@ -1936,7 +1939,7 @@
               target.position,
               target.isPlayer,
               Utils.getText("break_trigger"),
-              "gold"
+              "gold",
             );
           }
         }
@@ -1992,7 +1995,7 @@
           this.deckPool = [];
           deckConfig.forEach((cfg) => {
             const charEntity = this.playerTeam.find(
-              (p) => p.position === cfg.charIndex
+              (p) => p.position === cfg.charIndex,
             );
             if (charEntity) {
               const actionData = charEntity.actions[cfg.actionId];
@@ -2083,7 +2086,7 @@
               div.innerHTML = Utils.getTileSVG(
                 tile.type,
                 tile.element,
-                isHighLight
+                isHighLight,
               );
               canvas.appendChild(div);
             }
@@ -2258,7 +2261,7 @@
           const canvas = document.getElementById("grid-canvas");
           const promises = coords.map((c) => {
             const el = canvas.querySelector(
-              `.tile[data-x="${c.x}"][data-y="${c.y}"]`
+              `.tile[data-x="${c.x}"][data-y="${c.y}"]`,
             );
             if (el) {
               el.classList.add("eliminating");
@@ -2277,7 +2280,7 @@
               game.battleSystem.currentEntity,
               actionType,
               coords.length,
-              isMatch3
+              isMatch3,
             );
         }
       }
@@ -2285,7 +2288,7 @@
       class UIManager {
         static container = document.getElementById("ui-layer");
         static timelineQueue = document.querySelector(
-          "#timeline-container .timeline-queue"
+          "#timeline-container .timeline-queue",
         );
         static prepScene = document.getElementById("prep-scene");
         static levelSelectScene = document.getElementById("level-select-scene");
@@ -2318,7 +2321,7 @@
           sprite.className = "sprite";
           sprite.innerHTML = this.getCharSpriteSVG(
             entity.templateId,
-            entity.element
+            entity.element,
           );
           container.appendChild(sprite);
           const hud = document.createElement("div");
@@ -2330,7 +2333,7 @@
             index + 1
           }</div><div class="char-name">${entity.name.substr(
             0,
-            8
+            8,
           )}</div></div><div class="hp-bar-container"><div class="hp-bar-fill" id="hp-fill-${
             entity.id
           }"></div><div class="shield-bar-overlay" id="shield-fill-${
@@ -2349,7 +2352,7 @@
             const isCurrent = e.id === activeEntity.id;
             if (e.isPlayer) {
               const container = document.getElementById(
-                `p-pos-${e.position + 1}`
+                `p-pos-${e.position + 1}`,
               );
               if (container) {
                 if (isCurrent) {
@@ -2364,7 +2367,7 @@
               }
             } else {
               const container = document.getElementById(
-                `e-pos-${e.position + 1}`
+                `e-pos-${e.position + 1}`,
               );
               if (container) {
                 if (isCurrent) {
@@ -2474,12 +2477,12 @@
           const hpVal = document.getElementById(`hp-val-${entity.id}`);
           const hud = document.getElementById(`hud-${entity.id}`);
           const shieldFill = document.getElementById(
-            `shield-fill-${entity.id}`
+            `shield-fill-${entity.id}`,
           );
           if (!hpFill) return;
           const hpPct = Math.max(
             0,
-            Math.min(1, entity.currentHp / entity.maxHp)
+            Math.min(1, entity.currentHp / entity.maxHp),
           );
           const g = Math.floor(255 * hpPct);
           const b = Math.floor(255 * hpPct);
@@ -2488,7 +2491,7 @@
           hpVal.innerText = `${entity.currentHp}/${entity.maxHp}`;
           const shieldPct = Math.min(
             100,
-            (entity.temp.shield / entity.maxHp) * 100
+            (entity.temp.shield / entity.maxHp) * 100,
           );
           shieldFill.style.width = `${shieldPct}%`;
           if (entity.isFainted) hud.classList.add("fainted");
@@ -2504,7 +2507,7 @@
         }
         static updateActionOrder(orderList, animate = false) {
           const container = document.querySelector(
-            "#timeline-container .timeline-queue"
+            "#timeline-container .timeline-queue",
           );
           if (!container) return;
           if (animate) {
@@ -2515,7 +2518,7 @@
               if (newItemData) {
                 const newIcon = this.createOrderIcon(
                   newItemData,
-                  orderList.length
+                  orderList.length,
                 );
                 newIcon.classList.add("enter");
                 container.appendChild(newIcon);
@@ -2687,7 +2690,7 @@
           const container = document.getElementById("game-container");
           const scale = Math.min(
             window.innerWidth / CONFIG.SCREEN_WIDTH,
-            window.innerHeight / CONFIG.SCREEN_HEIGHT
+            window.innerHeight / CONFIG.SCREEN_HEIGHT,
           );
           container.style.transform = `scale(${scale})`;
         }
@@ -2775,7 +2778,7 @@
         static removeCharFromRoster(idx) {
           this.config.roster[idx] = null;
           this.config.deck = this.config.deck.filter(
-            (d) => d.charIndex !== idx
+            (d) => d.charIndex !== idx,
           );
           this.refreshAll();
         }
@@ -2796,13 +2799,13 @@
               const btn = document.createElement("div");
               btn.className = "action-item";
               const inDeckIdx = this.config.deck.findIndex(
-                (d) => d.charIndex === charIndex && d.actionId == actId
+                (d) => d.charIndex === charIndex && d.actionId == actId,
               );
               if (inDeckIdx > -1) btn.classList.add("selected");
               btn.innerHTML = Utils.getTileSVG(
                 actId,
                 act.type !== "none" ? act.type : charData.element,
-                true
+                true,
               );
               const dot = document.createElement("div");
               dot.className = "owner-dot";
@@ -2818,7 +2821,7 @@
         }
         static toggleDeckItem(charIndex, actionId) {
           const idx = this.config.deck.findIndex(
-            (d) => d.charIndex === charIndex && d.actionId == actionId
+            (d) => d.charIndex === charIndex && d.actionId == actionId,
           );
           if (idx > -1) {
             this.config.deck.splice(idx, 1);
