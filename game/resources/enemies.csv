@@ -1,0 +1,4 @@
+enemy_id,enemy_code,name_en,name_zh,hp,atk,def,spd,element
+200,boss_doll,Boss Doll,Boss人偶,100,15,5,10,dark
+201,minion_doll,Minion,杂兵,20,8,2,10,dark
+202,boss_doll_hard,Boss Doll (Hard),Boss人偶 (Hard),200,20,8,12,dark

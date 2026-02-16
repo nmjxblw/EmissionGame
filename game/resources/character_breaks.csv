@@ -1,0 +1,7 @@
+character_id,element_type,count,damage
+100,none,99,1
+101,water,10,15
+102,fire,10,15
+103,leaf,10,15
+104,dark,15,20
+105,light,15,20

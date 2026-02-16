@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Pixel Tactics Match-3</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <div id="game-container">
+      <div id="settings-btn" data-i18n-title="settings_tooltip">
+        <!-- SVG will be loaded dynamically -->
+        <div id="gear-icon"></div>
+      </div>
+
+      <div id="settings-modal">
+        <div class="modal-content">
+          <h3 data-i18n="settings_title">SETTINGS</h3>
+          <div class="modal-row">
+            <span data-i18n="volume">Volume</span>
+            <input type="range" id="vol-slider" min="0" max="100" value="50" />
+          </div>
+          <div class="modal-row">
+            <span data-i18n="language">Language</span>
+            <button id="lang-switch-btn" class="modal-btn" style="width: auto">
+              🇺🇸 / 🇨🇳
+            </button>
+          </div>
+          <hr style="border-color: #444; width: 100%; margin: 10px 0" />
+          <div id="battle-controls" style="display: none; width: 100%">
+            <div
+              style="font-size: 12px; color: #aaa; margin-bottom: 5px"
+              data-i18n="game_paused"
+            >
+              GAME PAUSED
+            </div>
+            <button
+              id="btn-surrender"
+              class="modal-btn danger"
+              data-i18n="btn_surrender"
+            >
+              SURRENDER
+            </button>
+          </div>
+          <button id="btn-resume" class="modal-btn" data-i18n="btn_resume">
+            RESUME
+          </button>
+        </div>
+      </div>
+
+      <div id="prep-scene" class="scene active">
+        <h2 style="text-align: center; color: gold" data-i18n="prep_title">
+          TEAM PREPARATION
+        </h2>
+        <div class="panel-box">
+          <h3 data-i18n="deploy_unit">Deploy Unit (Pick 3)</h3>
+          <div id="team-slots" class="char-select-row"></div>
+          <div
+            style="font-size: 10px; color: #aaa; margin-bottom: 5px"
+            data-i18n="roster_pool_hint"
+          >
+            Roster Pool (Click to Add):
+          </div>
+          <div
+            id="roster-pool"
+            style="display: flex; flex-wrap: wrap; gap: 5px"
+          ></div>
+        </div>
+        <div class="panel-box">
+          <h3 data-i18n="action_matrix">Action Matrix (Select 8)</h3>
+          <div
+            style="font-size: 10px; color: #aaa; margin-bottom: 5px"
+            data-i18n="rule_hint"
+          >
+            Rule: 8 Unique actions. Must include >=1 from each deployed unit.
+          </div>
+          <div id="action-deck-ui" class="action-pool-grid"></div>
+          <div style="margin-top: 5px; text-align: right">
+            <span data-i18n="selected">Selected:</span>
+            <span id="deck-count">0</span>/8
+          </div>
+        </div>
+        <button
+          id="btn-to-level"
+          class="pixel-btn"
+          disabled
+          data-i18n="btn_to_level"
+        >
+          TO LEVEL SELECT
+        </button>
+      </div>
+
+      <div id="level-select-scene" class="scene">
+        <h2
+          style="text-align: center; color: gold"
+          data-i18n="title_level_select"
+        >
+          SELECT LEVEL
+        </h2>
+        <div class="panel-box">
+          <h3 data-i18n="target_level">Target Level</h3>
+          <select
+            id="level-select"
+            style="width: 100%; padding: 5px; background: #333; color: #fff"
+          >
+            <option value="boss_doll" data-i18n="level_boss_1">
+              Target: Boss Doll (Lv.1)
+            </option>
+            <option value="boss_doll_hard" data-i18n="level_boss_5">
+              Target: Boss Doll (Lv.5)
+            </option>
+          </select>
+        </div>
+        <div
+          style="
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: auto;
+            margin-bottom: 50px;
+          "
+        >
+          <button
+            id="btn-back-prep"
+            class="pixel-btn"
+            data-i18n="btn_back_prep"
+          >
+            BACK TO PREP
+          </button>
+          <button
+            id="btn-start-battle"
+            class="pixel-btn"
+            data-i18n="btn_engage"
+          >
+            ENGAGE
+          </button>
+        </div>
+      </div>
+
+      <div id="battle-scene" class="scene">
+        <div id="battlefield">
+          <div id="sprite-layer">
+            <div id="p-pos-1" class="sprite-container"></div>
+            <div id="p-pos-2" class="sprite-container"></div>
+            <div id="p-pos-3" class="sprite-container"></div>
+            <div id="e-pos-1" class="sprite-container"></div>
+            <div id="e-pos-2" class="sprite-container"></div>
+            <div id="e-pos-3" class="sprite-container"></div>
+          </div>
+          <div id="timeline-container">
+            <div class="timeline-label" data-i18n="timeline_next">NEXT:</div>
+            <div class="timeline-queue"></div>
+          </div>
+        </div>
+        <div id="board-area">
+          <div id="grid-canvas"></div>
+        </div>
+        <div id="action-hint" data-i18n="hint_action">
+          Double Click: Single | Match 3: Triple Skill
+        </div>
+      </div>
+      <div id="toast"></div>
+    </div>
+
+    <!-- 基础配置 -->
+    <script src="scripts/config.js"></script>
+    <!-- 数据加载器 -->
+    <script src="scripts/load_i18n.js"></script>
+    <script src="scripts/data_loader.js"></script>
+    <script src="scripts/asset_loader.js"></script>
+    <!-- 核心系统 -->
+    <script src="scripts/sound_manager.js"></script>
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/ui_manager.js"></script>
+    <!-- 游戏逻辑 -->
+    <script src="scripts/battle_entity.js"></script>
+    <script src="scripts/battle_system.js"></script>
+    <script src="scripts/board_system.js"></script>
+    <!-- 界面管理 -->
+    <script src="scripts/settings_manager.js"></script>
+    <script src="scripts/lang_manager.js"></script>
+    <script src="scripts/prep_manager.js"></script>
+    <!-- 主入口 -->
+    <script src="scripts/game.js"></script>
+  </body>
+</html>

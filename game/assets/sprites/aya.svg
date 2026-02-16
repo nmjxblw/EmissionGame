@@ -1,0 +1,15 @@
+<!-- Character Sprite: Aya (Archer) -->
+<svg viewBox="0 0 64 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Legs -->
+  <rect x="20" y="80" width="8" height="40" fill="#444" stroke="#000" stroke-width="2"/>
+  <rect x="36" y="80" width="8" height="40" fill="#444" stroke="#000" stroke-width="2"/>
+  <!-- Body -->
+  <rect x="18" y="45" width="28" height="35" stroke="#000" stroke-width="2"/>
+  <!-- Head -->
+  <rect x="22" y="18" width="20" height="22" fill="#ffccaa" stroke="#000" stroke-width="2"/>
+  <!-- Bow -->
+  <path d="M10 40 q-10 20 0 40" fill="none" stroke="#8b4513" stroke-width="3"/>
+  <line x1="10" y1="40" x2="10" y2="80" stroke="#fff" stroke-width="1" opacity="0.5"/>
+  <!-- Dagger -->
+  <path d="M46 60 l10 10 l-4 4 l-10 -10 z" fill="#ccc" stroke="#000" stroke-width="2"/>
+</svg>

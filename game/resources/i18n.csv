@@ -1,0 +1,40 @@
+text_id,en_us,zh_cn
+prep_title,TEAM PREPARATION,队伍整备
+deploy_unit,Deploy Unit (Pick 3),出战配置 (选3人)
+target_level,Target Level,目标关卡
+level_boss_1,Target: Boss Doll (Lv.1),目标: 测试人偶 (Lv.1)
+level_boss_5,Target: Boss Doll (Lv.5),目标: 测试人偶 (Lv.5)
+action_matrix,Action Matrix (Select 8),技能矩阵 (选8个)
+rule_hint,Rule: 8 Unique actions. Must include >=1 from each deployed unit.,规则: 8个不重复技能。每个出战角色至少选1个。
+selected,Selected:,已选:
+btn_save,SAVE & ENGAGE,保存配置并战斗
+turn,Turn,回合
+hint_action,Double Click: Single | Match 3: Triple Skill,双击: 单消技能 | 三消: 强化技能
+defeat,DEFEAT,挑战失败
+victory,VICTORY,挑战胜利
+refresh_board,Refreshing Board...,重置棋盘...
+attack,Attack!,攻击!
+block,BLOCK,格挡
+revive,Revive,苏醒
+fainted,fainted!,陷入昏迷!
+revived,revived!,苏醒了!
+break_trigger,BREAK!,击破!
+uses_action,uses Action,使用了
+acting,is acting...,正在行动...
+click_add,Click to Add,点击添加
+click_remove,Click to Remove,点击移除
+settings_title,SETTINGS,设置
+volume,Volume,音量
+language,Language,语言
+btn_resume,RESUME,继续游戏
+btn_surrender,SURRENDER,放弃战斗
+game_paused,GAME PAUSED,游戏暂停
+btn_to_level,TO LEVEL SELECT,出征
+btn_back_prep,BACK TO PREP,重新整备
+btn_engage,ENGAGE,开始战斗
+title_level_select,SELECT LEVEL,关卡选择
+roster_pool_hint,Roster Pool (Click to Add):,角色池 (点击添加):
+timeline_next,NEXT:,下一步:
+settings_tooltip,Settings,设置
+roster_full,Roster Full,队伍已满
+save_load_failed,Save load failed,存档加载失败

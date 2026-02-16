@@ -1,0 +1,6 @@
+enemy_id,element_type,count,damage
+200,light,10,20
+200,fire,20,20
+201,light,5,10
+202,light,15,30
+202,fire,30,30

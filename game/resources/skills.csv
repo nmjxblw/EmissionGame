@@ -1,0 +1,25 @@
+skill_id,name_en,name_zh,type,desc_en,desc_zh
+1001,Strike,打击,fire,Basic Attack,基础攻击
+1002,Defend,防御,fire,Basic Def,基础防御
+1003,Charge,充能,fire,Charge,充能
+1004,Burst,爆发,fire,Burst,爆发
+1005,Zhan,斩,none,1: 1 Dmg | 3: AoE Dmg,单:1伤 | 三:全体
+1006,Yu,御,none,1: Shield | 3: Shield+,单:护盾 | 三:强盾
+1007,Zheng,征,fire,Buff Stance,态势切换
+1008,Ba,霸,fire,Burst Damage,爆发伤害
+1009,MoonSong,月夜吟,leaf,Gain Melody,获得夜律
+1010,VineHurt,花蔓殇,leaf,True Dmg,真实伤害
+1011,LakeScent,湖中涟,leaf,Shield Friend,友方护盾
+1012,BirdRage,青鸟怒,none,Multi-Hit,多段攻击
+1013,WaterBlade,水刃,water,Mode Switch/Dmg,切换/伤害
+1014,MeteorArrow,流星矢,water,Mode Switch/Snipe,切换/狙击
+1015,RainSeason,寒雨季,water,Debuff Cold,施加寒雨
+1016,IceHunter,猎人,water,Shield Breaker,破盾
+1017,FirstLight,初芒,light,Light Dmg,光伤
+1018,FlashEdge,闪锋,light,Buff Flash,闪锋
+1019,BatheLight,沐光,light,Team Shield,群体护盾
+1020,BlazingSun,烈阳,light,Random Dmg,随机伤害
+1021,GodWord,言,dark,Dark Dmg,暗伤
+1022,Silence,噤,dark,Silence,沉默
+1023,Fear,怖,none,None Dmg,无伤
+1024,Severe,厉,dark,Execute Dmg,处决

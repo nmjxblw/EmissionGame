@@ -1,0 +1,7 @@
+<!-- Default Character Sprite -->
+<svg viewBox="0 0 64 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Body -->
+  <path d="M20 120 L25 40 L15 30 L49 30 L39 40 L44 120 z" opacity="0.8" stroke="#000" stroke-width="2"/>
+  <!-- Head -->
+  <circle cx="32" cy="20" r="12" stroke="#000" stroke-width="2"/>
+</svg>
