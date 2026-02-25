@@ -2,13 +2,21 @@
  * UIManager - 统一的 UI 管理类，处理所有战斗场景的 UI 渲染和动画
  */
 class UIManager {
-  static timelineQueue = document.querySelector(
-    "#timeline-container .timeline-queue",
-  );
-  static prepScene = document.getElementById("prep-scene");
-  static levelSelectScene = document.getElementById("level-select-scene");
-  static battleScene = document.getElementById("battle-scene");
-  static toast = document.getElementById("toast");
+  static get timelineQueue() {
+    return document.querySelector("#timeline-container .timeline-queue");
+  }
+  static get prepScene() {
+    return document.getElementById("prep-scene");
+  }
+  static get levelSelectScene() {
+    return document.getElementById("level-select-scene");
+  }
+  static get battleScene() {
+    return document.getElementById("battle-scene");
+  }
+  static get toast() {
+    return document.getElementById("toast");
+  }
 
   static initBattle(pTeam, eTeam) {
     this.prepScene.classList.remove("active");

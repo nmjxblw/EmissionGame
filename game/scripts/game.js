@@ -12,6 +12,9 @@ const game = {
 };
 
 window.onload = async () => {
+  // 首先构建所有 DOM 元素
+  DOMBuilder.buildAll();
+
   // 初始化 i18n
   if (window.i18n) {
     await i18n.load();
