@@ -1,0 +1,39 @@
+:root {
+  --bg-main: #020617;
+  --bg-card: rgba(15, 23, 42, 0.4);
+  --bg-card-hover: rgba(15, 23, 42, 0.6);
+  --border-main: rgba(255, 255, 255, 0.05);
+  --border-accent: rgba(255, 255, 255, 0.1);
+  
+  --color-player: #60a5fa;
+  --color-enemy: #fb7185;
+  
+  --color-water: #38bdf8;
+  --color-earth: #92400e;
+  --color-wood: #10b981;
+  --color-metal: #fde047;
+  --color-fire: #e11d48;
+  
+  --font-sans: "ZCOOL Kuaile", "STXingkai", "Kaiti", "楷体", serif;
+  --font-mono: "ZCOOL Kuaile", "STXingkai", "Kaiti", "楷体", serif;
+
+  /* Responsive Scaling */
+  --ui-scale: 1;
+  --base-padding: 1rem;
+  --base-gap: 1rem;
+  --card-radius: 1.5rem;
+  
+  /* Component specific scales */
+  --board-size: 100%; /* 允许棋盘填充容器 */
+  --sprite-size: 5rem;
+  --font-size-base: 0.9rem;
+  --font-size-lg: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --sprite-size: 4rem;
+    --base-padding: 0.5rem;
+    --base-gap: 0.5rem;
+  }
+}

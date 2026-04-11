@@ -1,0 +1,221 @@
+.menu-trigger-container {
+  position: absolute;
+  top: calc(var(--safe-area-inset-top) + var(--base-padding));
+  left: var(--base-padding);
+  z-index: 50;
+}
+
+.menu-trigger-btn {
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s, transform 0.1s;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+}
+
+.menu-trigger-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-trigger-btn:active {
+  transform: scale(0.95);
+}
+
+.gear-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--color-player);
+  fill: currentColor;
+}
+
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 51;
+}
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 52;
+  pointer-events: none;
+  padding: 1rem;
+}
+
+.menu-content {
+  pointer-events: auto;
+  z-index: 53;
+  width: min(calc(100vw - 2rem), 28rem);
+  background-color: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--card-radius);
+  padding: var(--base-padding);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.menu-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+.menu-subsection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.menu-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.save-slots-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 30vh;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+.save-slot-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.slot-info {
+  min-width: 0;
+  flex: 1;
+  margin-right: 0.5rem;
+}
+
+.slot-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.slot-time {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.slot-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.slot-btn {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s, transform 0.1s;
+  border: none;
+  cursor: pointer;
+}
+
+.slot-btn:active {
+  transform: scale(0.9);
+}
+
+.btn-save {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+
+.btn-save:hover {
+  background-color: rgba(59, 130, 246, 0.4);
+}
+
+.btn-load {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+}
+
+.btn-load:hover {
+  background-color: rgba(16, 185, 129, 0.4);
+}
+
+.btn-delete {
+  background-color: rgba(244, 63, 94, 0.2);
+  color: #fb7185;
+}
+
+.btn-delete:hover {
+  background-color: rgba(244, 63, 94, 0.4);
+}
+
+.menu-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-weight: 700;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.action-btn:active {
+  transform: scale(0.95);
+}
+
+.btn-resume {
+  background-color: #3b82f6;
+  color: #fff;
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.2);
+}
+
+.btn-resume:hover {
+  background-color: #2563eb;
+}
+
+.btn-surrender {
+  background-color: rgba(244, 63, 94, 0.1);
+  border: 1px solid rgba(244, 63, 94, 0.2);
+  color: #fb7185;
+}
+
+.btn-surrender:hover {
+  background-color: rgba(244, 63, 94, 0.2);
+}

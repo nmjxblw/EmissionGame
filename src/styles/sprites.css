@@ -1,0 +1,54 @@
+.sprite-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.sprite-glow {
+  position: absolute;
+  inset: 0;
+  filter: blur(24px);
+  border-radius: 9999px;
+}
+
+.sprite-body {
+  width: 100%;
+  height: 100%;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+}
+
+.sprite-body.player {
+  box-shadow: inset 0 0 15px rgba(56, 189, 248, 0.1);
+}
+
+.sprite-body.enemy {
+  box-shadow: inset 0 0 15px rgba(225, 29, 72, 0.1);
+}
+
+.player-sprite-inner {
+  width: 50%;
+  height: 50%;
+  border-radius: 0.125rem;
+  transform: rotate(45deg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.enemy-sprite-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sparkle-icon {
+  width: 70%;
+  height: 70%;
+  filter: drop-shadow(0 0 8px rgba(225, 29, 72, 0.5));
+}

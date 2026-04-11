@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+Kuaile&display=swap');
+@import "tailwindcss";
+
+/* Custom Styles */
+@import "./styles/variables.css";
+@import "./styles/layout.css";
+@import "./styles/battlefield.css";
+@import "./styles/spells.css";
+@import "./styles/board.css";
+@import "./styles/overlays.css";
+@import "./styles/menu.css";
+@import "./styles/sprites.css";
+
+@layer base {
+  body {
+    background-color: #020617;
+    color: #f8fafc;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+}
+
+@theme {
+  --font-sans: "ZCOOL Kuaile", "STXingkai", "Kaiti", "楷体", serif;
+}
+
+@layer base {
+  :root {
+    --safe-area-inset-top: env(safe-area-inset-top);
+    --safe-area-inset-bottom: env(safe-area-inset-bottom);
+    --safe-area-inset-left: env(safe-area-inset-left);
+    --safe-area-inset-right: env(safe-area-inset-right);
+  }
+
+  html, body, #root, button, input, select, textarea {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #020617;
+    font-family: "ZCOOL Kuaile", "STXingkai", "Kaiti", "楷体", serif;
+  }
+
+  text {
+    font-family: "ZCOOL Kuaile", "STXingkai", "Kaiti", "楷体", serif;
+  }
+}
+
+.safe-top {
+  padding-top: var(--safe-area-inset-top);
+}
+
+.safe-bottom {
+  padding-bottom: var(--safe-area-inset-bottom);
+}
+
+.safe-left {
+  padding-left: var(--safe-area-inset-left);
+}
+
+.safe-right {
+  padding-right: var(--safe-area-inset-right);
+}
+
+.wechat-capsule-space {
+  margin-right: 100px;
+}

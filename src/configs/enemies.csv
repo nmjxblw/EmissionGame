@@ -1,0 +1,4 @@
+id,name,maxHp,gold_bonus,wood_bonus,water_bonus,fire_bonus,earth_bonus,gold_reduction,wood_reduction,water_reduction,fire_reduction,earth_reduction,multDamageBonus,multDamageReduction,baseMultBonus,baseMultReduction,attackInterval,baseDamage,damageFloat
+enemy_001,妖兽,200,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,5,1
+enemy_002,魔修,500,10,10,10,10,10,5,5,5,5,5,0.1,0.05,1.0,1.0,8,8,3
+enemy_003,邪灵,1000,20,20,20,20,20,10,10,10,10,10,0.2,0.1,1.1,0.9,6,11,3

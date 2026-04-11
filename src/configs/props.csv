@@ -1,0 +1,4 @@
+id,display_name,description,prop_type,rarity,max_quantity,tradeable
+prop_001,灵石,修仙界的通用货币，也是制作一些道具的原材料。,"currency,material",0,9999,true
+prop_002,补气丹,恢复少量灵气的基础丹药。,"consumable",0,99,true
+prop_003,筑基丹,用于突破筑基期的关键丹药。,"consumable,material",1,10,false
