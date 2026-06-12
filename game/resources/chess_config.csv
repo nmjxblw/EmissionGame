@@ -1,0 +1,6 @@
+element,char,char_color,shape,color
+metal,"金","#fafa48",hexagon,"#FFFFAA"
+wood,"木","#4cae4c",diamond,"#AAFFAA"
+water,"水","#60b4c9",circle,"#66DFFE"
+fire,"火","#d71111",triangle,"#f95858"
+earth,"土","#6b4205",rectangle,"#e5a038"

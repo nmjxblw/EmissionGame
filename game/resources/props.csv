@@ -1,0 +1,8 @@
+name,display_name,rarity,capacity,removable,description
+stone,"石头",0,1,true,"即使没有灵力的人也能使用的法宝，丢向你的敌人，可以造成1点土属性伤害。"
+sprite_herb,"灵草",1,1,true,"修真界最常见的药草，是制作灵药的原材料。"
+sprite_stone,"灵石",1,0,true,"修真界的货币，修炼者用它来交易。"
+iron_sword,"铁剑",1,3,false,"一把普通的铁剑，释放金字法诀造成伤害后，造成5点金属性伤害。"
+wooden_sword,"桃木剑",0,2,false,"一把普通的桃木剑，释放木字法诀时，基础伤害+1。"
+lighting_charm,"雷符",2,1,false,"一张写了雷决的符咒，现在你的金字法诀对敌人的护盾额外造成3点金属性伤害。"
+water_proof_charm,"避水符",1,1,false,"避水符能让你在水里呼吸，并保持干爽。"

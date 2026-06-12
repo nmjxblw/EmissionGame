@@ -1,0 +1,11 @@
+name,display_name,rarity,removable,description
+sprite_root,"灵根",5,true,"你的灵根，这是你踏入修仙世界的根基。保护好它，一旦你的灵根被摧毁，你的修炼之旅就结束了！"
+mental_sprite_root,"金灵根",5,true,"传说中的金灵根，传闻是金蝉子的脱壳碎片。"
+wood_sprite_root,"木灵根",5,true,"传说中的木灵根，由镇元子人参树上的果实转化而来。"
+water_sprite_root,"水灵根",5,true,"传说中的水灵根，青海龙王敖光身上的一片龙鳞。"
+fire_sprite_root,"火灵根",5,true,"传说中的火灵根，传闻是太上老君炼丹炉里的一块熔渣。"
+earth_sprite_root,"土灵根",5,true,"传说中的土灵根，女娲捏人时留下的泥土，是生命的本源。"
+million_sprite_root,"百万年灵根",6,true,"融合了五行之力的百万年灵根。现在，天上天下唯我独尊。"
+evil_sprite_root,"邪灵根",4,true,"修炼了邪道之后的灵根，你的功法变得狠毒，但你被世人所唾弃。"
+demon_sprite_root,"魔灵根",6,true,"一念神魔，万古如长夜。"
+blood_sprite_root,"血灵根",5,true,"你习得了血修功法，行走于正邪两道之间。"
